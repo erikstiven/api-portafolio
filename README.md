@@ -29,4 +29,55 @@ API REST desarrollada en <b>Laravel</b> para gestionar un portafolio dinámico c
 
 Ejemplo de endpoint:
 ```bash
-GET https://api.tudominio.com/v1/proyectos
+GET [https://api.tudominio.com/v1/proyectos](https://portafolio.codecima.com/api/v1/proyectos)
+
+
+⚙️ Instalación Local
+
+Clonar el repositorio:
+
+git clone https://github.com/erikstiven/api-portafolio.git
+cd api-portafolio
+
+
+Instalar dependencias:
+
+composer install
+npm install
+
+
+Configurar variables de entorno en .env:
+
+APP_NAME=PortafolioAPI
+APP_URL=http://localhost:8000
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=portafolio
+DB_USERNAME=root
+DB_PASSWORD=
+
+CLOUDINARY_URL=cloudinary://API_KEY:API_SECRET@CLOUD_NAME
+
+
+Ejecutar migraciones y seeders:
+
+php artisan migrate --seed
+
+
+Levantar servidor:
+
+php artisan serve
+
+📌 Endpoints Principales
+🔑 Autenticación
+POST /auth/login
+
+📂 Categorías
+GET /categorias
+POST /categorias
+
+💼 Proyectos
+GET /proyectos
+POST /proyectos
+
