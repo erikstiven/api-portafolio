@@ -11,9 +11,9 @@ API REST desarrollada en <b>Laravel</b> para gestionar un portafolio dinámico c
 </p>
 
 <p align="center">
-  <a href="https://github.com/tu-usuario/api-portafolio/stargazers"><img src="https://img.shields.io/github/stars/erikstiven/api-portafolio?style=for-the-badge" alt="Stars"></a>
-  <a href="https://github.com/tu-usuario/api-portafolio/network/members"><img src="https://img.shields.io/github/forks/erikstiven/api-portafolio?style=for-the-badge" alt="Forks"></a>
-  <a href="https://github.com/tu-usuario/api-portafolio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/erikstiven/api-portafolio?style=for-the-badge" alt="License"></a>
+  <a href="https://github.com/erikstiven/api-portafolio/stargazers"><img src="https://img.shields.io/github/stars/erikstiven/api-portafolio?style=for-the-badge" alt="Stars"></a>
+  <a href="https://github.com/erikstiven/api-portafolio/network/members"><img src="https://img.shields.io/github/forks/erikstiven/api-portafolio?style=for-the-badge" alt="Forks"></a>
+  <a href="https://github.com/erikstiven/api-portafolio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/erikstiven/api-portafolio?style=for-the-badge" alt="License"></a>
 </p>
 
 ---
