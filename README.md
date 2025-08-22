@@ -25,7 +25,7 @@ API REST desarrollada en <b>Laravel</b> para gestionar un portafolio dinámico c
 ---
 
 ## 🌍 API en Producción
-🔗 **Base URL**: [https://api.tudominio.com/v1](https://api.tudominio.com/v1)
+🔗 **Base URL**: https://portafolio.codecima.com/api/v1/proyectos
 
 Ejemplo de endpoint:
 ```bash
