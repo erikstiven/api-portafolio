@@ -46,6 +46,6 @@ class RedSocialController extends Controller
     public function destroy(RedSocial $redSocial)
     {
         $redSocial->delete();
-        return response()->noContent();
+        return response()->noContent(); 
     }
 }

@@ -19,6 +19,7 @@ class CloudinaryUploader
         $opts = array_merge([
             'folder'        => $folder,
             'resource_type' => $resourceType, // 'image' | 'raw' | 'video' | 'auto'
+            'access_mode'   => 'public',      // clave: forzar acceso público
         ], $options);
 
         $res = $this->cloud->uploadApi()->upload($localPath, $opts);
@@ -37,6 +38,9 @@ class CloudinaryUploader
 
     public function uploadRaw(string $path, string $folder = 'perfiles/cv', array $options = []): array
     {
+        // fuerza que los raw (ej. PDFs) sean públicos
+        $options = array_merge(['access_mode' => 'public'], $options);
+
         return $this->upload($path, $folder, 'raw', $options);
     }
 

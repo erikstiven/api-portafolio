@@ -118,4 +118,6 @@ class ProyectoController extends Controller
         $proyecto->delete();
         return response()->json(null, 204);
     }
+
+    
 }
