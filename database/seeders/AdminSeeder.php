@@ -10,9 +10,18 @@ class AdminSeeder extends Seeder
 {
     public function run(): void
     {
-        User::firstOrCreate(
-            ['email' => env('ADMIN_EMAIL')],
-            ['name' => env('ADMIN_NAME'), 'password' => Hash::make(env('ADMIN_PASSWORD'))]
+        $email    = config('admin.email');
+        $name     = config('admin.name', 'Admin');
+        $password = config('admin.password');
+
+        if (!$email || !$password) {
+            // Evita crear un usuario con datos vacíos
+            throw new \RuntimeException('Faltan ADMIN_EMAIL o ADMIN_PASSWORD en el .env / config.');
+        }
+
+        User::updateOrCreate(
+            ['email' => $email],
+            ['name' => $name, 'password' => Hash::make($password)]
         );
     }
 }
