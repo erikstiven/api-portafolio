@@ -14,7 +14,6 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         try {
-            // Fuerza el guard JWT
             if (! $token = Auth::guard('api')->attempt($credentials)) {
                 return response()->json(['message' => 'Credenciales incorrectas'], 401);
             }
@@ -23,11 +22,9 @@ class AuthController extends Controller
         }
 
         return response()->json([
-            'token'       => $token,
-            'token_type'  => 'Bearer',
-            // Si configuraste ttl en config/jwt.php, puedes exponerlo:
-            // 'expires_in'  => Auth::guard('api')->factory()->getTTL() * 60,
-            'user'        => Auth::guard('api')->user(),
+            'token'      => $token,
+            'token_type' => 'Bearer',
+            'user'       => Auth::guard('api')->user(),
         ]);
     }
 
