@@ -2,15 +2,27 @@
 
 namespace App\Models;
 
-use Laravel\Sanctum\HasApiTokens;   // ← AÑADE ESTO
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+// 👇 Importa el contrato de JWT
+use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
+
+class User extends Authenticatable implements JWTSubject
 {
-    use HasApiTokens, Notifiable;    // ← AÑADE HasApiTokens
+    use Notifiable; // (Opcional) Si aún usas Sanctum en otro lado, puedes agregar HasApiTokens aquí
 
-    protected $fillable = ['name','email','password'];
+    protected $fillable = ['name', 'email', 'password'];
+    protected $hidden = ['password', 'remember_token'];
 
-    protected $hidden = ['password','remember_token'];
+    // 👇 Requeridos por JWTSubject
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims(): array
+    {
+        return [];
+    }
 }
